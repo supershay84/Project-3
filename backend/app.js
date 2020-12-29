@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const MONGOURI = process.env.MONGODB_URI;
 
 
-//MIDDLEWARE//
+app.use(cors());
 app.use(express.json());
 
 app.use('/businesses', businessesController);
