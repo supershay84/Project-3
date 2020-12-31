@@ -11,7 +11,21 @@ const MONGOURI = process.env.MONGODB_URI;
 app.use(cors());
 app.use(express.json());
 
-app.use('/businesses', businessesController);
+// const whitelist = [
+//     'http://localhost:3007',
+//     'https://all-in-your-business.herokuapp.com/',
+//   ];
+//   const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (whitelist.indexOf(origin) !== -1) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error('Nah, son! Not allowed by CORS'));
+//         }
+//     },
+//   };
+  
+//   app.use(cors(corsOptions));
 
 mongoose.connect(MONGOURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindandModify: true});
 
@@ -23,6 +37,8 @@ mongoose.connection.on('disconnected', () => console.log('Mongo Disconnected'));
 mongoose.connection.once('open', () => {
     console.log('Connected to Mongoose...');
 });
+
+app.use('/businesses', businessesController);
 
 //LISTEN//
 app.listen(PORT, () => {
