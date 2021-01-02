@@ -13,7 +13,7 @@ app.use(express.json());
 
 // const whitelist = [
 //     'http://localhost:3007',
-//     'https://all-in-your-business.herokuapp.com/',
+//     'https://all-in-your-business.herokuapp.com/'
 //   ];
 //   const corsOptions = {
 //     origin: function (origin, callback) {
