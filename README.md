@@ -1,0 +1,1 @@
+All in your Business is a react app to post and/or find small businesses and link to their websites and/or social media.

@@ -11,21 +11,21 @@ const MONGOURI = process.env.MONGODB_URI;
 app.use(cors());
 app.use(express.json());
 
-// const whitelist = [
-//     'http://localhost:3007',
-//     'https://all-in-your-business.herokuapp.com/'
-//   ];
-//   const corsOptions = {
-//     origin: function (origin, callback) {
-//         if (whitelist.indexOf(origin) !== -1) {
-//             callback(null, true);
-//         } else {
-//             callback(new Error('Nah, son! Not allowed by CORS'));
-//         }
-//     },
-//   };
+const whitelist = [
+    'http://localhost:3007',
+    'https://all-in-your-business.herokuapp.com/'
+  ];
+  const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Nah, son! Not allowed by CORS'));
+        }
+    },
+  };
   
-//   app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
 
 mongoose.connect(MONGOURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindandModify: true});
 
