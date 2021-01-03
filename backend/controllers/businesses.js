@@ -39,8 +39,10 @@ businesses.put('/:id', async (req, res) => {
 //CREATE//
 businesses.post('/', async (req,res) => {
     try{
+        
         const createdBusiness = await Business.create(req.body);
         res.status(200).json(createdBusiness);
+        console.log(req.body)
     } catch(err) {
         res.status(400).json(err);
     }
