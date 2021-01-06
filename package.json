@@ -1,21 +1,33 @@
 {
+  "engines": {
+  "node": "15.0.1"
+},
   "name": "Project-3",
   "version": "1.0.0",
-  "description": "",
+  "description": "All in your Business is a react app to post and/or find small businesses and link to their websites and/or social media.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "node-sass": "^5.0.0",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.4.0",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.1",
-    "styled-components": "^5.2.1"
-  }
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.9"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supershay84/Project-3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/supershay84/Project-3/issues"
+  },
+  "homepage": "https://github.com/supershay84/Project-3#readme"
 }

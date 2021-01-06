@@ -10,7 +10,7 @@ const businessesController = require('./controllers/businesses.js');
 const MONGOURI = process.env.MONGODB_URI;
 const User = require('./models/user');
 
-const SECRET = 'inwestphiladelphiabornandraisedontheplaygroundiswhereispentmostofmydays'
+const SECRET = process.env.SECRET;
 
 app.use(cors());
 app.use(express.json());
@@ -64,3 +64,5 @@ app.post('/login', async (req, res) => {
 app.listen(PORT, () => {
     console.log('Celebrations happening on port', PORT);
 });
+
+module.exports = app;
