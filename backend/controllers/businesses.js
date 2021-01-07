@@ -41,7 +41,7 @@ businesses.delete('/:id', auth, async (req, res) => {
 })
 
 //UPDATE//
-businesses.put('/:id', async (req, res) => {
+businesses.put('/:id', auth, async (req, res) => {
     try {
         const updatedBusiness = await Business.findByIdAndUpdate(
             req.params.id,
@@ -55,7 +55,7 @@ businesses.put('/:id', async (req, res) => {
 });
 
 //CREATE//
-businesses.post('/', async (req,res) => {
+businesses.post('/', auth, async (req,res) => {
     try{
         const createdBusiness = await Business.create(req.body);
         res.status(200).json(createdBusiness);
